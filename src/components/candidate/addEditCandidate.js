@@ -7,6 +7,7 @@ import { createCandidate } from "../../api/candidateApis";
 import FormField from "../ui/fromField";
 import BaseButton from "../ui/button";
 import { withRouter } from "react-router";
+import "./addEditCandidate.css";
 
 const defaultValues = {
   status: "CV screening",
@@ -76,21 +77,9 @@ const AddEditCandidate = (props) => {
       }}
     >
       {({ submitForm, isSubmitting }) => (
-        <Paper
-          sx={{
-            "& .MuiTextField-root": {
-              m: 1,
-              width: "60ch",
-            },
-            width: "40%",
-            margin: "auto",
-          }}
-          elevation={3}
-        >
-          <Typography variant="h6" sx={{ textAlign: "center" }}>
-            <strong>
-              {action === "edit" ? "Edit Candidate" : "Add Candidate"}
-            </strong>
+        <Paper className="add-edit-candidate-form" elevation={3}>
+          <Typography variant="h6" className="add-edit-candidate-form-heading">
+            {action === "edit" ? "Edit Candidate" : "Add Candidate"}
           </Typography>
           <FormField type="text" name="name" label="Name" />
           <br />
@@ -137,6 +126,7 @@ const AddEditCandidate = (props) => {
           <br />
           <BaseButton
             onClick={submitForm}
+            className="add-edit-candidate-form-submit"
             sx={{ width: "60ch", margin: "15px" }}
           >
             Submit

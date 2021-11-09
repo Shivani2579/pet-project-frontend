@@ -11,6 +11,7 @@ import {
   Paper,
 } from "@mui/material";
 import ListCandidateRows from "./listCandidateRows";
+import "./listCandidate.css";
 
 const ListCandidates = () => {
   const [candidates, setCandidates] = useState([]);
@@ -37,8 +38,11 @@ const ListCandidates = () => {
       <BaseButton component={Link} to="/newcandidate/add">
         Add Candidate
       </BaseButton>
-      <TableContainer component={Paper} sx={{ marginTop: "10px" }}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <TableContainer
+        component={Paper}
+        className="list-candidate-table-container"
+      >
+        <Table aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>

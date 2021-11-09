@@ -47,11 +47,9 @@ const ListCandidateRows = (props) => {
                 {moment(row.updated_at).format("DD/MM/YYYY")}
               </TableCell>
               <TableCell>
-                <Link
-                  to={`/candidate/edit/${row._id}`}
-                  style={{ color: "black" }}
-                >
-                  <EditIcon />
+                {/* Edit Candidate functionality is in progress */}
+                <Link to={`/candidate/edit/${row._id}`}>
+                  <EditIcon color="disabled" />
                 </Link>
               </TableCell>
               <TableCell>

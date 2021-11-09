@@ -1,8 +1,9 @@
 import Button from "@mui/material/Button";
+import "./button.css";
 
 const BaseButton = (props) => {
   return (
-    <Button variant="contained" color="primary" {...props}>
+    <Button className="base-button" variant="contained" {...props}>
       {props.children}
     </Button>
   );

@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// Error handling is in progress
 export const getCandidates = async () => {
   try {
     const result = await axios.get("/api/candidates");
@@ -11,7 +12,7 @@ export const getCandidates = async () => {
 
 export const createCandidate = async (postData) => {
   try {
-    const result = await axios.post("api/candidates", {
+    const result = await axios.post("/api/candidates", {
       name: postData.name,
       surname: postData.surname,
       email: postData.email,
